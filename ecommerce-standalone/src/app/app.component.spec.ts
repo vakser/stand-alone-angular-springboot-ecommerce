@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'ecommerce-standalone' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ecommerce-standalone');
+    expect(app.pageTitle).toEqual('ecommerce-standalone');
   });
 
   it('should render title', () => {

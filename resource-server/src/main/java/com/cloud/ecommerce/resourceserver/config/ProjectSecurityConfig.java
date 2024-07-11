@@ -3,6 +3,7 @@ package com.cloud.ecommerce.resourceserver.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
@@ -32,8 +33,11 @@ public class ProjectSecurityConfig {
                                         "/api/shop/categories",
                                         "/api/shop/brands",
                                         "/api/shop/products",
-                                        "/api/shop/products/**"
-                                ).permitAll());
+                                        "/api/shop/products/**",
+                                        "/basket",
+                                        "/basket/**"
+                                ).permitAll())
+                .csrf(AbstractHttpConfigurer::disable);;
         return http.build();
     }
 
