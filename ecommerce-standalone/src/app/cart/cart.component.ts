@@ -4,6 +4,7 @@ import { ICart, ICartItem, ICartTotals } from '../shared/model/cart';
 import { Observable } from 'rxjs';
 import { CartService } from './cart.service';
 import {CartDetailsComponent} from "../core/cart-details/cart-details.component";
+import {RouterModule} from "@angular/router";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {CartDetailsComponent} from "../core/cart-details/cart-details.component"
     standalone: true,
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.scss'],
-    imports: [CommonModule, CartDetailsComponent]
+    imports: [CommonModule, CartDetailsComponent, RouterModule]
 })
 export class CartComponent implements OnInit {
   cart$!: Observable<ICart | null>;
